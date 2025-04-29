@@ -1,0 +1,347 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>力扣收获 | gdh分享园</title><meta name="author" content="gdh"><meta name="copyright" content="gdh"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="##内容 三元运算符1234567三元运算符（&#96;l1 !&#x3D; null ? l1.val : 0&#96;）相当于int val1;if (l1 !&#x3D; null) &#123;    val1 &#x3D; l1.val;&#125; else &#123;    val1 &#x3D; 0;&#125;  以下是关于链表的详细解答，涵盖你提到的所有问题： 链表 1. 如何新建一个链表在 Java 中，链表是通过定义一个节点类">
+<meta property="og:type" content="article">
+<meta property="og:title" content="力扣收获">
+<meta property="og:url" content="http://gdhgxd.cn/2025/04/28/vue/index.html">
+<meta property="og:site_name" content="gdh分享园">
+<meta property="og:description" content="##内容 三元运算符1234567三元运算符（&#96;l1 !&#x3D; null ? l1.val : 0&#96;）相当于int val1;if (l1 !&#x3D; null) &#123;    val1 &#x3D; l1.val;&#125; else &#123;    val1 &#x3D; 0;&#125;  以下是关于链表的详细解答，涵盖你提到的所有问题： 链表 1. 如何新建一个链表在 Java 中，链表是通过定义一个节点类">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://gdhgxd.cn/img/qiqi.png">
+<meta property="article:published_time" content="2025-04-28T08:58:00.000Z">
+<meta property="article:modified_time" content="2025-04-28T08:58:00.000Z">
+<meta property="article:author" content="gdh">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://gdhgxd.cn/img/qiqi.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "力扣收获",
+  "url": "http://gdhgxd.cn/2025/04/28/vue/",
+  "image": "http://gdhgxd.cn/img/qiqi.png",
+  "datePublished": "2025-04-28T08:58:00.000Z",
+  "dateModified": "2025-04-28T08:58:00.000Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "gdh",
+      "url": "http://gdhgxd.cn/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/keli.jpg"><link rel="canonical" href="http://gdhgxd.cn/2025/04/28/vue/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const hour = new Date().getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (theme === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else theme === 'light' ? activateLightMode() : activateDarkMode()
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":230,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: {"chs_to_cht":"已切换为繁体中文","cht_to_chs":"已切换为简体中文","day_to_night":"已切换为深色模式","night_to_day":"已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"top-right"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '力扣收获',
+  isHighlightShrink: true,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/qiqi.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">gdh分享园</span></a><a class="nav-page-title" href="/"><span class="site-name">力扣收获</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">力扣收获</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-04-28T08:58:00.000Z" title="发表于 2025-04-28 16:58:00">2025-04-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-04-28T08:58:00.000Z" title="更新于 2025-04-28 16:58:00">2025-04-28</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">2.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>7分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><div id="post-outdate-notice" data="{&quot;limitDay&quot;:365,&quot;messagePrev&quot;:&quot;It has been&quot;,&quot;messageNext&quot;:&quot;days since the last update, the content of the article may be outdated.&quot;,&quot;postUpdate&quot;:&quot;2025-04-28 16:58:00&quot;}" hidden></div><p>##内容</p>
+<h2 id="三元运算符"><a href="#三元运算符" class="headerlink" title="三元运算符"></a>三元运算符</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">三元运算符（`l1 != null ? l1.val : 0`）相当于</span><br><span class="line">int val1;</span><br><span class="line">if (l1 != null) &#123;</span><br><span class="line">    val1 = l1.val;</span><br><span class="line">&#125; else &#123;</span><br><span class="line">    val1 = 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>以下是关于链表的详细解答，涵盖你提到的所有问题：</p>
+<h2 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h2><hr>
+<h3 id="1-如何新建一个链表"><a href="#1-如何新建一个链表" class="headerlink" title="1. 如何新建一个链表"></a>1. <strong>如何新建一个链表</strong></h3><p>在 Java 中，链表是通过定义一个节点类（<code>ListNode</code>）来实现的。每个节点包含数据域和指针域。</p>
+<h4 id="定义链表节点"><a href="#定义链表节点" class="headerlink" title="定义链表节点"></a>定义链表节点</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">ListNode</span> &#123;</span><br><span class="line">    <span class="type">int</span> val;        <span class="comment">// 数据域</span></span><br><span class="line">    ListNode next;  <span class="comment">// 指针域，指向下一个节点</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 构造函数</span></span><br><span class="line">    ListNode(<span class="type">int</span> val) &#123;</span><br><span class="line">        <span class="built_in">this</span>.val = val;</span><br><span class="line">        <span class="built_in">this</span>.next = <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="创建链表"><a href="#创建链表" class="headerlink" title="创建链表"></a>创建链表</h4><p>通过创建多个节点并链接它们来构建链表：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建节点</span></span><br><span class="line"><span class="type">ListNode</span> <span class="variable">node1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ListNode</span>(<span class="number">1</span>);</span><br><span class="line"><span class="type">ListNode</span> <span class="variable">node2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ListNode</span>(<span class="number">2</span>);</span><br><span class="line"><span class="type">ListNode</span> <span class="variable">node3</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ListNode</span>(<span class="number">3</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 链接节点</span></span><br><span class="line">node1.next = node2;</span><br><span class="line">node2.next = node3;</span><br><span class="line"></span><br><span class="line"><span class="comment">// node1 -&gt; node2 -&gt; node3 -&gt; null</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="2-使用指针指向链表头节点"><a href="#2-使用指针指向链表头节点" class="headerlink" title="2. 使用指针指向链表头节点"></a>2. <strong>使用指针指向链表头节点</strong></h3><p>在链表中，通常使用一个指针（引用）来指向链表的头节点，以便操作链表。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">ListNode</span> <span class="variable">head</span> <span class="operator">=</span> node1;  <span class="comment">// head 指向链表的头节点</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="3-如何通过指针给链表数据域注入数据"><a href="#3-如何通过指针给链表数据域注入数据" class="headerlink" title="3. 如何通过指针给链表数据域注入数据"></a>3. <strong>如何通过指针给链表数据域注入数据</strong></h3><p>可以通过指针访问链表节点的数据域并修改其值。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">head.val = <span class="number">10</span>;  <span class="comment">// 修改头节点的值</span></span><br><span class="line">head.next.val = <span class="number">20</span>;  <span class="comment">// 修改第二个节点的值</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="4-如何遍历注入数据"><a href="#4-如何遍历注入数据" class="headerlink" title="4. 如何遍历注入数据"></a>4. <strong>如何遍历注入数据</strong></h3><p>遍历链表时，可以通过指针逐个访问节点并修改数据域。</p>
+<h4 id="示例：遍历链表并修改每个节点的值"><a href="#示例：遍历链表并修改每个节点的值" class="headerlink" title="示例：遍历链表并修改每个节点的值"></a>示例：遍历链表并修改每个节点的值</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">ListNode</span> <span class="variable">current</span> <span class="operator">=</span> head;  <span class="comment">// 定义指针 current，初始指向头节点</span></span><br><span class="line"><span class="keyword">while</span> (current != <span class="literal">null</span>) &#123;</span><br><span class="line">    current.val = current.val * <span class="number">2</span>;  <span class="comment">// 修改当前节点的值</span></span><br><span class="line">    current = current.next;  <span class="comment">// 移动指针到下一个节点</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="5-返回一个链表所有数据，怎么返回"><a href="#5-返回一个链表所有数据，怎么返回" class="headerlink" title="5. 返回一个链表所有数据，怎么返回"></a>5. <strong>返回一个链表所有数据，怎么返回</strong></h3><p>可以通过遍历链表，将每个节点的数据域存储到一个列表（如 <code>List</code>）中，然后返回该列表。</p>
+<h4 id="示例：返回链表的所有数据"><a href="#示例：返回链表的所有数据" class="headerlink" title="示例：返回链表的所有数据"></a>示例：返回链表的所有数据</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title function_">getLinkedListData</span><span class="params">(ListNode head)</span> &#123;</span><br><span class="line">    List&lt;Integer&gt; result = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">    <span class="type">ListNode</span> <span class="variable">current</span> <span class="operator">=</span> head;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 遍历链表</span></span><br><span class="line">    <span class="keyword">while</span> (current != <span class="literal">null</span>) &#123;</span><br><span class="line">        result.add(current.val);  <span class="comment">// 将当前节点的值添加到列表</span></span><br><span class="line">        current = current.next;  <span class="comment">// 移动指针到下一个节点</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> result;  <span class="comment">// 返回链表的所有数据</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="6-Java-中链表的特点"><a href="#6-Java-中链表的特点" class="headerlink" title="6. Java 中链表的特点"></a>6. <strong>Java 中链表的特点</strong></h3><p>Java 中的链表具有以下特点：</p>
+<h4 id="（1）动态大小"><a href="#（1）动态大小" class="headerlink" title="（1）动态大小"></a>（1）<strong>动态大小</strong></h4><ul>
+<li>链表的大小可以动态增长或缩小，不需要预先分配固定大小的内存。</li>
+</ul>
+<h4 id="（2）插入和删除效率高"><a href="#（2）插入和删除效率高" class="headerlink" title="（2）插入和删除效率高"></a>（2）<strong>插入和删除效率高</strong></h4><ul>
+<li>在链表中插入或删除节点的时间复杂度为 <strong>O(1)</strong>（如果已知插入&#x2F;删除位置）。</li>
+<li>相比于数组，链表在中间插入或删除数据时不需要移动其他元素。</li>
+</ul>
+<h4 id="（3）随机访问效率低"><a href="#（3）随机访问效率低" class="headerlink" title="（3）随机访问效率低"></a>（3）<strong>随机访问效率低</strong></h4><ul>
+<li>链表不支持随机访问，访问第 <code>n</code> 个节点需要从头节点开始遍历，时间复杂度为 <strong>O(n)</strong>。</li>
+</ul>
+<h4 id="（4）内存开销"><a href="#（4）内存开销" class="headerlink" title="（4）内存开销"></a>（4）<strong>内存开销</strong></h4><ul>
+<li>每个节点除了存储数据外，还需要额外的空间存储指针（引用），因此链表的内存开销比数组大。</li>
+</ul>
+<h4 id="（5）实现方式"><a href="#（5）实现方式" class="headerlink" title="（5）实现方式"></a>（5）<strong>实现方式</strong></h4><ul>
+<li>Java 提供了内置的链表实现：<code>java.util.LinkedList</code>。</li>
+<li><code>LinkedList</code> 是一个双向链表，支持在头部和尾部高效插入和删除数据。</li>
+</ul>
+<h4 id="（6）适用场景"><a href="#（6）适用场景" class="headerlink" title="（6）适用场景"></a>（6）<strong>适用场景</strong></h4><ul>
+<li>需要频繁插入和删除数据的场景。</li>
+<li>数据量不确定或动态变化的场景。</li>
+<li>不需要频繁随机访问数据的场景。</li>
+</ul>
+<hr>
+<h3 id="完整示例代码"><a href="#完整示例代码" class="headerlink" title="完整示例代码"></a>完整示例代码</h3><p>以下是一个完整的 Java 示例，演示如何创建链表、遍历链表、修改数据并返回链表的所有数据：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">ListNode</span> &#123;</span><br><span class="line">    <span class="type">int</span> val;</span><br><span class="line">    ListNode next;</span><br><span class="line"></span><br><span class="line">    ListNode(<span class="type">int</span> val) &#123;</span><br><span class="line">        <span class="built_in">this</span>.val = val;</span><br><span class="line">        <span class="built_in">this</span>.next = <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">LinkedListExample</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">// 创建链表 1 -&gt; 2 -&gt; 3 -&gt; null</span></span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">head</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ListNode</span>(<span class="number">1</span>);</span><br><span class="line">        head.next = <span class="keyword">new</span> <span class="title class_">ListNode</span>(<span class="number">2</span>);</span><br><span class="line">        head.next.next = <span class="keyword">new</span> <span class="title class_">ListNode</span>(<span class="number">3</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 遍历链表并修改数据</span></span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">current</span> <span class="operator">=</span> head;</span><br><span class="line">        <span class="keyword">while</span> (current != <span class="literal">null</span>) &#123;</span><br><span class="line">            current.val = current.val * <span class="number">2</span>;  <span class="comment">// 修改每个节点的值</span></span><br><span class="line">            current = current.next;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 返回链表的所有数据</span></span><br><span class="line">        List&lt;Integer&gt; result = getLinkedListData(head);</span><br><span class="line">        System.out.println(result);  <span class="comment">// 输出: [2, 4, 6]</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 返回链表的所有数据</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> List&lt;Integer&gt; <span class="title function_">getLinkedListData</span><span class="params">(ListNode head)</span> &#123;</span><br><span class="line">        List&lt;Integer&gt; result = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">current</span> <span class="operator">=</span> head;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (current != <span class="literal">null</span>) &#123;</span><br><span class="line">            result.add(current.val);</span><br><span class="line">            current = current.next;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
+<li><strong>新建链表</strong>：通过定义节点类并链接节点。</li>
+<li><strong>指针操作</strong>：使用指针（引用）指向链表头节点，并通过指针操作链表。</li>
+<li><strong>遍历链表</strong>：通过循环逐个访问节点。</li>
+<li><strong>返回链表数据</strong>：将链表数据存储到列表并返回。</li>
+<li><strong>链表特点</strong>：动态大小、插入删除效率高、随机访问效率低。</li>
+</ul>
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p>以下是正确的 <code>for</code> 循环写法：</p>
+<h4 id="1-完整初始化"><a href="#1-完整初始化" class="headerlink" title="1. 完整初始化"></a>1. <strong>完整初始化</strong></h4><p>复制</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for (int i = 0; i &lt; nums.length; i++) &#123;</span><br><span class="line">    // 循环体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-省略初始化（不推荐）"><a href="#2-省略初始化（不推荐）" class="headerlink" title="2. 省略初始化（不推荐）"></a>2. <strong>省略初始化（不推荐）</strong></h4><p>如果循环变量已经在外部定义，可以省略初始化部分，但必须保留分号：</p>
+<p>复制</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">int i = 0;</span><br><span class="line">for (; i &lt; nums.length; i++) &#123;</span><br><span class="line">    // 循环体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-省略所有部分（无限循环）"><a href="#3-省略所有部分（无限循环）" class="headerlink" title="3. 省略所有部分（无限循环）"></a>3. <strong>省略所有部分（无限循环）</strong></h4><p>如果省略所有部分，<code>for</code> 循环将变成一个无限循环：</p>
+<p>复制</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for (;;) &#123;</span><br><span class="line">    // 无限循环</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-遍历数组"><a href="#4-遍历数组" class="headerlink" title="4. 遍历数组"></a>4. <strong>遍历数组</strong></h4><ul>
+<li><p>使用 <code>for</code> 循环或 <code>for-each</code> 循环遍历数组。</p>
+</li>
+<li><p>示例：</p>
+<p>复制</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">int[] nums = &#123;1, 2, 3, 4, 5&#125;;</span><br><span class="line"></span><br><span class="line">// 使用 for 循环</span><br><span class="line">for (int i = 0; i &lt; nums.length; i++) &#123;</span><br><span class="line">    System.out.println(nums[i]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 使用 for-each 循环</span><br><span class="line">for (int num : nums) &#123;</span><br><span class="line">    System.out.println(num);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><p>将两个二进制字符串相加并以二进制字符串的形式返回结果。</p>
+<ol>
+<li><p>从字符串的末尾（最低位）开始逐位相加。</p>
+</li>
+<li><p>使用一个变量 <code>carry</code> 记录进位。</p>
+</li>
+<li><p>将每一位的相加结果拼接到结果字符串中。</p>
+</li>
+<li><p>最后反转结果字符串，得到正确的顺序。</p>
+<pre><code>    // 从末尾开始逐位相加
+    while (i &gt;= 0 || j &gt;= 0 || carry != 0) &#123;
+        int sum = carry;  // 当前位的和
+    
+        // 如果 a 还有位，加上 a 的当前位
+        if (i &gt;= 0) &#123;
+            sum += a.charAt(i) - &#39;0&#39;;  // 将字符转换为数字
+            i--;
+        &#125;
+    
+        // 如果 b 还有位，加上 b 的当前位
+        if (j &gt;= 0) &#123;
+            sum += b.charAt(j) - &#39;0&#39;;  // 将字符转换为数字
+            j--;
+        &#125;
+    
+        // 计算当前位的结果和进位
+        result.append(sum % 2);  // 当前位的结果
+        carry = sum / 2;        // 进位值
+    &#125;
+    
+    // 反转结果字符串
+    return result.reverse().toString();
+&#125;
+
+public static void main(String[] args) &#123;
+    Solution solution = new Solution();
+    String a = &quot;1010&quot;;
+    String b = &quot;1011&quot;;
+    System.out.println(solution.addBinary(a, b));  // 输出: &quot;10101&quot;
+&#125;
+</code></pre>
+</li>
+</ol>
+<h2 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h2><ul>
+<li><p><strong><code>if</code> 语句</strong>：根据条件执行或不执行某段代码。</p>
+</li>
+<li><p><strong><code>while</code> 循环</strong>：当条件为真时，重复执行某段代码。</p>
+</li>
+<li><p><strong><code>for</code> 循环</strong>：根据条件重复执行某段代码，通常用于遍历或计数。</p>
+<h4 id="（1）明确目标"><a href="#（1）明确目标" class="headerlink" title="（1）明确目标"></a>（1）<strong>明确目标</strong></h4><p>在设计条件判断之前，先明确程序的目标。</p>
+<p>例如：</p>
+<p>如果要遍历数组，条件判断可能是“是否到达数组末尾”。</p>
+<p>如果要查找某个元素，条件判断可能是“当前元素是否等于目标值”。</p>
+<h4 id="（2）确定条件表达式"><a href="#（2）确定条件表达式" class="headerlink" title="（2）确定条件表达式"></a>（2）<strong>确定条件表达式</strong></h4><p>条件表达式是一个布尔表达式，结果为 <code>true</code> 或 <code>false</code>。</p>
+<p>常见的条件表达式包括：</p>
+<p>比较运算：<code>==</code>, <code>!=</code>, <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code></p>
+<p>逻辑运算：<code>&amp;&amp;</code>（与），<code>||</code>（或），<code>!</code>（非）</p>
+<p>其他：<code>instanceof</code>（类型检查），<code>contains</code>（集合包含检查）</p>
+<h4 id="（3）考虑边界条件"><a href="#（3）考虑边界条件" class="headerlink" title="（3）考虑边界条件"></a>（3）<strong>考虑边界条件</strong></h4><p>确保条件判断覆盖所有可能的边界情况。</p>
+<p>例如：</p>
+<p>如果遍历数组，需要考虑数组为空的情况。</p>
+<p>如果查找元素，需要考虑元素不存在的情况。</p>
+<h4 id="（4）优化条件判断"><a href="#（4）优化条件判断" class="headerlink" title="（4）优化条件判断"></a>（4）<strong>优化条件判断</strong></h4><p>尽量使条件判断简洁、清晰。</p>
+<p>避免重复的条件判断。</p>
+<p>使用适当的逻辑运算符组合条件。</p>
+</li>
+</ul>
+<h3 id="全局变量与局部变量区别"><a href="#全局变量与局部变量区别" class="headerlink" title="全局变量与局部变量区别"></a>全局变量与局部变量区别</h3><table>
+<thead>
+<tr>
+<th align="left">特性</th>
+<th align="left">全局变量</th>
+<th align="left">局部变量</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>作用域</strong></td>
+<td align="left">整个类中都可以访问</td>
+<td align="left">仅限于定义它的方法、代码块或循环内部</td>
+</tr>
+<tr>
+<td align="left"><strong>生命周期</strong></td>
+<td align="left">从对象创建到对象销毁</td>
+<td align="left">从变量定义开始，到方法、代码块或循环结束</td>
+</tr>
+<tr>
+<td align="left"><strong>默认值</strong></td>
+<td align="left">有默认值（如 <code>int</code> 默认为 <code>0</code>）</td>
+<td align="left">没有默认值，必须显式初始化</td>
+</tr>
+<tr>
+<td align="left"><strong>访问权限</strong></td>
+<td align="left">可以被类中的所有方法访问</td>
+<td align="left">只能在定义它的方法、代码块或循环中访问</td>
+</tr>
+<tr>
+<td align="left"><strong>内存分配</strong></td>
+<td align="left">存储在堆内存中</td>
+<td align="left">存储在栈内存中</td>
+</tr>
+</tbody></table>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://gdhgxd.cn">gdh</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://gdhgxd.cn/2025/04/28/vue/">http://gdhgxd.cn/2025/04/28/vue/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://gdhgxd.cn" target="_blank">gdh分享园</a>！</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="/img/qiqi.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2025/04/28/springclound%E5%AD%A6%E4%B9%A0/" title="springcloud学习"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/%E5%8F%8B%E4%BA%BA%E5%9B%A2%E8%81%9A.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">springcloud学习</div></div><div class="info-2"><div class="info-item-1">springclound学习nacos 1.引入依赖 2.在resource里加入bootstrap.yml文件，这个文件是引导文件，优先级高于application.yml 将配置交给Nacas管理的步骤 1.在nacos中添加配置文件 2.在微服务中加入nacos的config依赖 3.在微服务中添加bootstrap.yml，配置nacos地址，当前环境，服务名称，文件后缀名。这些决定了程序启动时去nacos读取那个文件 配置自动更新 方式一 在@value主任的变量所在类上添加注解@RefreshScope 方式二 使用@configurationProperties注解 多环境配置共享 </div></div></div></a><a class="pagination-related" href="/2025/04/28/sas%E5%AD%A6%E4%B9%A0/" title="sas学习"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/fengdan.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">sas学习</div></div><div class="info-2"><div class="info-item-1">SAS系统学习： &#96; 123@Column` 注解通常用于 ORM（对象关系映射）框架中，如 Hibernate 或 JPA（Java Persistence API），它用于指定 Java 类中的字段或属性如何映射到数据库表中的列。`@ExcelProperty` 注解通常用于 Excel 导入导出相关的框架中，它用于标记 Java 类中的字段或属性，以指定该字段或属性在 Excel 文件中的列名。    使用场景： Excel 导入导出：当你需要从 Excel 文件中读取数据或将数据写入 Excel 文件时，使用 @ExcelProperty 注解。 数据库持久化：当你需要将 Java 对象映射到数据库表时，使用 @Column 注解。  ElementType...</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">gdh</div><div class="author-info-description">一个小小的程序员的小世界</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/hunanshifangdh"><i class="fab fa-github"></i><span>gdh</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/hunanshifangdh/hunanshifangdh.github.io" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:admin@fomal.cn" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的博客</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E5%85%83%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.</span> <span class="toc-text">三元运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%93%BE%E8%A1%A8"><span class="toc-number">2.</span> <span class="toc-text">链表</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%A6%82%E4%BD%95%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%93%BE%E8%A1%A8"><span class="toc-number">2.1.</span> <span class="toc-text">1. 如何新建一个链表</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%E9%93%BE%E8%A1%A8%E8%8A%82%E7%82%B9"><span class="toc-number">2.1.1.</span> <span class="toc-text">定义链表节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E9%93%BE%E8%A1%A8"><span class="toc-number">2.1.2.</span> <span class="toc-text">创建链表</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%BD%BF%E7%94%A8%E6%8C%87%E9%92%88%E6%8C%87%E5%90%91%E9%93%BE%E8%A1%A8%E5%A4%B4%E8%8A%82%E7%82%B9"><span class="toc-number">2.2.</span> <span class="toc-text">2. 使用指针指向链表头节点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%A6%82%E4%BD%95%E9%80%9A%E8%BF%87%E6%8C%87%E9%92%88%E7%BB%99%E9%93%BE%E8%A1%A8%E6%95%B0%E6%8D%AE%E5%9F%9F%E6%B3%A8%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="toc-number">2.3.</span> <span class="toc-text">3. 如何通过指针给链表数据域注入数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%A6%82%E4%BD%95%E9%81%8D%E5%8E%86%E6%B3%A8%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="toc-number">2.4.</span> <span class="toc-text">4. 如何遍历注入数据</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B%EF%BC%9A%E9%81%8D%E5%8E%86%E9%93%BE%E8%A1%A8%E5%B9%B6%E4%BF%AE%E6%94%B9%E6%AF%8F%E4%B8%AA%E8%8A%82%E7%82%B9%E7%9A%84%E5%80%BC"><span class="toc-number">2.4.1.</span> <span class="toc-text">示例：遍历链表并修改每个节点的值</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E8%BF%94%E5%9B%9E%E4%B8%80%E4%B8%AA%E9%93%BE%E8%A1%A8%E6%89%80%E6%9C%89%E6%95%B0%E6%8D%AE%EF%BC%8C%E6%80%8E%E4%B9%88%E8%BF%94%E5%9B%9E"><span class="toc-number">2.5.</span> <span class="toc-text">5. 返回一个链表所有数据，怎么返回</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B%EF%BC%9A%E8%BF%94%E5%9B%9E%E9%93%BE%E8%A1%A8%E7%9A%84%E6%89%80%E6%9C%89%E6%95%B0%E6%8D%AE"><span class="toc-number">2.5.1.</span> <span class="toc-text">示例：返回链表的所有数据</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-Java-%E4%B8%AD%E9%93%BE%E8%A1%A8%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-number">2.6.</span> <span class="toc-text">6. Java 中链表的特点</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%EF%BC%881%EF%BC%89%E5%8A%A8%E6%80%81%E5%A4%A7%E5%B0%8F"><span class="toc-number">2.6.1.</span> <span class="toc-text">（1）动态大小</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%EF%BC%882%EF%BC%89%E6%8F%92%E5%85%A5%E5%92%8C%E5%88%A0%E9%99%A4%E6%95%88%E7%8E%87%E9%AB%98"><span class="toc-number">2.6.2.</span> <span class="toc-text">（2）插入和删除效率高</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%EF%BC%883%EF%BC%89%E9%9A%8F%E6%9C%BA%E8%AE%BF%E9%97%AE%E6%95%88%E7%8E%87%E4%BD%8E"><span class="toc-number">2.6.3.</span> <span class="toc-text">（3）随机访问效率低</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%EF%BC%884%EF%BC%89%E5%86%85%E5%AD%98%E5%BC%80%E9%94%80"><span class="toc-number">2.6.4.</span> <span class="toc-text">（4）内存开销</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%EF%BC%885%EF%BC%89%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F"><span class="toc-number">2.6.5.</span> <span class="toc-text">（5）实现方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%EF%BC%886%EF%BC%89%E9%80%82%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-number">2.6.6.</span> <span class="toc-text">（6）适用场景</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%8C%E6%95%B4%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81"><span class="toc-number">2.7.</span> <span class="toc-text">完整示例代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">2.8.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84"><span class="toc-number">3.</span> <span class="toc-text">数组</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%AE%8C%E6%95%B4%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">3.0.1.</span> <span class="toc-text">1. 完整初始化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E7%9C%81%E7%95%A5%E5%88%9D%E5%A7%8B%E5%8C%96%EF%BC%88%E4%B8%8D%E6%8E%A8%E8%8D%90%EF%BC%89"><span class="toc-number">3.0.2.</span> <span class="toc-text">2. 省略初始化（不推荐）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E7%9C%81%E7%95%A5%E6%89%80%E6%9C%89%E9%83%A8%E5%88%86%EF%BC%88%E6%97%A0%E9%99%90%E5%BE%AA%E7%8E%AF%EF%BC%89"><span class="toc-number">3.0.3.</span> <span class="toc-text">3. 省略所有部分（无限循环）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E9%81%8D%E5%8E%86%E6%95%B0%E7%BB%84"><span class="toc-number">3.0.4.</span> <span class="toc-text">4. 遍历数组</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">4.</span> <span class="toc-text">字符串</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF"><span class="toc-number">5.</span> <span class="toc-text">循环</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%EF%BC%881%EF%BC%89%E6%98%8E%E7%A1%AE%E7%9B%AE%E6%A0%87"><span class="toc-number">5.0.1.</span> <span class="toc-text">（1）明确目标</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%EF%BC%882%EF%BC%89%E7%A1%AE%E5%AE%9A%E6%9D%A1%E4%BB%B6%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">5.0.2.</span> <span class="toc-text">（2）确定条件表达式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%EF%BC%883%EF%BC%89%E8%80%83%E8%99%91%E8%BE%B9%E7%95%8C%E6%9D%A1%E4%BB%B6"><span class="toc-number">5.0.3.</span> <span class="toc-text">（3）考虑边界条件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%EF%BC%884%EF%BC%89%E4%BC%98%E5%8C%96%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD"><span class="toc-number">5.0.4.</span> <span class="toc-text">（4）优化条件判断</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E5%8C%BA%E5%88%AB"><span class="toc-number">5.1.</span> <span class="toc-text">全局变量与局部变量区别</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/04/28/2025-4-28-hexo%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/" title="hexo第一篇文章"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/%E6%98%9F%E7%A9%BA.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="hexo第一篇文章"/></a><div class="content"><a class="title" href="/2025/04/28/2025-4-28-hexo%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/" title="hexo第一篇文章">hexo第一篇文章</a><time datetime="2025-04-28T08:58:00.000Z" title="发表于 2025-04-28 16:58:00">2025-04-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/04/28/Swagger/" title="swagger"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/keqina.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="swagger"/></a><div class="content"><a class="title" href="/2025/04/28/Swagger/" title="swagger">swagger</a><time datetime="2025-04-28T08:58:00.000Z" title="发表于 2025-04-28 16:58:00">2025-04-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/04/28/git%E5%AD%A6%E4%B9%A0/" title="git学习"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/guizhong.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="git学习"/></a><div class="content"><a class="title" href="/2025/04/28/git%E5%AD%A6%E4%B9%A0/" title="git学习">git学习</a><time datetime="2025-04-28T08:58:00.000Z" title="发表于 2025-04-28 16:58:00">2025-04-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/04/28/springclound%E5%AD%A6%E4%B9%A0/" title="springcloud学习"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/%E5%8F%8B%E4%BA%BA%E5%9B%A2%E8%81%9A.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="springcloud学习"/></a><div class="content"><a class="title" href="/2025/04/28/springclound%E5%AD%A6%E4%B9%A0/" title="springcloud学习">springcloud学习</a><time datetime="2025-04-28T08:58:00.000Z" title="发表于 2025-04-28 16:58:00">2025-04-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/04/28/vue/" title="力扣收获"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/qiqi.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="力扣收获"/></a><div class="content"><a class="title" href="/2025/04/28/vue/" title="力扣收获">力扣收获</a><time datetime="2025-04-28T08:58:00.000Z" title="发表于 2025-04-28 16:58:00">2025-04-28</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2025 By gdh</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.5</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="30" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
